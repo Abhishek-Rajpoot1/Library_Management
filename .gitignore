@@ -1,0 +1,11 @@
+# Database credentials
+db.properties
+*.env
+
+# NetBeans / build files
+/build/
+/dist/
+/nbproject/private/
+
+# Logs
+*.log
