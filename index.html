@@ -1,48 +1,16 @@
+<%-- 
+    Document   : Home
+    Created on : 31 Jul, 2025, 10:58:26 PM
+    Author     : Admin
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <style>
-            body{
-                height:750px;
-                width:100%;
-                /*border: 2px solid black;*/
-                margin:0px;
-                padding: 0px;
-                background-repeat: no-repeat;
-                background-size:100% 750px;
-                background-image: url("Images/library.jpg ");
-            }
-            a{
-                 text-decoration: none;
-            }
-            .main {
-                 margin-top: -40px;
-               height:70px;
-               width:99.45%;
-                border:5px solid black;
-                justify-content:space-evenly;
-                display: flex;
-               
-                
-            }
-         .main a h2:hover{
-                color:green;
-                font-size:29px;
-                /*margin:1px;*/
-            }
-            h1{
-                font-size: 60px;
-                margin-top: -5px;
-                color:black;
-                background-color:grey;
-            }
-             input{
-                width:300px
-            }
-        </style>
+        <link rel="stylesheet" href="../Style.css">
     </head>
     <body>
     <center>
@@ -51,11 +19,11 @@
        
         <header class="main">
             
-            <a href="Lib_Reg.jsp"><h2>Admin Registration</h2></a>
-             <a href="adminlogin.jsp"><h2>Admin Login</h2></a>
-             <a href="BookList.jsp"> <h2>Book List</h2></a>
-             <a href="StudentRegisration.jsp"> <h2>Student Registration</h2></a>
-            <a href="Stu_Login.jsp"> <h2>Student Login</h2></a>
+            <a href="../Lib_Reg.jsp"><h3>Admin Registration</h3></a>
+             <a href="../adminlogin.jsp"><h3>Admin Login</h3></a>
+             <a href="../BookList.jsp"> <h3>Book List</h3></a>
+             <a href="../StudentRegisration.jsp"> <h3>Student Registration</h3></a>
+            <a href="../Stu_Login.jsp"> <h3>Student Login</h3></a>
            
         </header>
     </center>
