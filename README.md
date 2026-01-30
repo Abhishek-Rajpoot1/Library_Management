@@ -25,9 +25,10 @@ This project helps manage books, students, and issue/return records efficiently.
 
 ---
 
-## 🗄️ Database
-- MySQL
-- SQL file included for table structure
+## 🗄️ Database (MySQL)
+- Database Name: library
+- Import SQL file from `database/library.sql`
+- Tool used: SQLyog
 
 ---
 
@@ -43,3 +44,6 @@ This project helps manage books, students, and issue/return records efficiently.
 ## 👨‍💻 Author
 **Abhishek Rajpoot**  
 GitHub: https://github.com/Abhishek-Rajpoot1
+
+
+
