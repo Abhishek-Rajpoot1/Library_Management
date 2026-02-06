@@ -305,6 +305,12 @@ form table input{
 
 
 /*For responsive*/
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
   
        @media (max-width: 768px) {
     nav ul {
