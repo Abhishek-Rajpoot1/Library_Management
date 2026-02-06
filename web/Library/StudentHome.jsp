@@ -1,31 +1,356 @@
-<%-- 
-    Document   : StudentHome
-    Created on : 1 Aug, 2025, 7:15:46 AM
-    Author     : Admin
---%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-      <link rel="stylesheet" href="Style.css">
-       <script defer src="Library.js"></script>
-    </head>
-    <body>
-         <nav class="navbar">
-            <div class="logo">Student Home</div>
-            <ul>
-                <li> <a href="Home.jsp"> Home </a></li>
-                <li><a href="SearchBook.jsp"> Search Book</a></li>
-                <li><a href="BookIssue.jsp">  Issue Books</a></li>
-                <li><a href="Issued.jsp">  Issued Books </a></li>
-                <li> <a href="ReturnBook.jsp">  Return Books </a></li>
-                   <li> <a href="Home.jsp"> Logout </a></li> 
-            </ul>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </nav>
+/* 
+    Created on : 30 Jan, 2026, 11:44:51 AM
+    Author     : Admin
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/*body {
+    line-height: 1.6;
+    color: #eee9e9;
+     background-color: rgb(7, 5, 14);
+}*/
+
+   body {
+   color: #eee9e9;
+    min-height: 100vh;
+    background-image: url("Images/home.jpg ");   /* apni image ka naam */
+    background-size: cover;             /* FULL screen cover */
+    background-position: center center; /* center me rahe */
+    background-repeat: no-repeat;       /* repeat na ho */
+    background-attachment: fixed;       /* optional (parallax feel) */
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    /* background-color: #080111; */
+    background-color: #04000d;
+    /* color: #0c0171; */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
     
-    </body>
-</html>
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    
+    
+    
+}
+
+/*Form*/
+form{
+    color:black;
+    padding: 20px;
+    text-align: center;
+    content: box;
+}
+table{
+   background-color: ghostwhite;
+   /*border :5px solid black;*/
+   border-radius:10px;
+   max-width: 500px;
+   display: flex;
+   flex-direction: column;
+   margin:auto;
+     
+}
+
+form table td{
+    display: flex;
+     width: 100%;
+    /*background-color: red;*/
+     text-align: center;
+    
+}
+form table input{
+    padding: 5px;
+    border-radius: 7px;
+    display: flex;
+    width: 170px;
+    /*background-color: red;*/
+     text-align: center;
+    
+}
+#submit,#reset{
+    border:none;
+    padding: 5px;
+    width: 100px;
+    background-color: #0f0323;
+    color: #e3dbdb;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+#submit:hover {
+    background-color:#336600;
+}
+#reset:hover {
+    background-color:#990000;
+}
+
+
+
+
+
+
+
+
+
+
+  /*Header Style*/
+            
+           
+           
+           
+           
+           
+/*             #logout{
+                height: 30px;
+                max-width: 110px;
+                border-radius: 30px;
+                background-color:darkred;
+                color: black;
+                padding-top:7px;
+                margin-top:12px;
+                
+            }*/
+
+/*Librarian registration*/
+ 
+           
+ /*Admin Login*/
+
+ /*Admin Home*/
+ .adminhome{
+                background-image: url("Images/liabrarian.png ");
+            }
+            
+            /*BOOk Or Bookmodule*/
+                .bookmodule{
+                background-image: url("Images/liabrarian.png ");
+            }
+         /*Search Book By id*/
+          .searchId{
+                
+                background-image: url("Images/liabrarian.png ");
+            }
+         
+           
+            /*Add Book*/
+                .addBook{
+                background-image: url("Images/add_book.jpg ");
+            }
+           
+            #cont{
+                background-color:palegoldenrod;
+            }
+          
+            /*Update Booh Or Update*/
+            
+                .update{
+                
+                background-image: url("Images/liabrarian.png ");
+            }
+            
+            #cont{
+                background-color:palegoldenrod;
+            }
+            /*Update -> UpdateBook*/
+                 .updateBook{
+                background-image: url("Images/update_book.jpg ");
+            }
+           
+            #cont{
+                background-color:palegoldenrod;
+            }
+            /*Delete*/
+             .delete{
+                background-image: url("Images/delete_book.jpg ");
+            }
+           
+            
+/*Book List*/
+            .BookList #data{
+                color: white; 
+                background-color: rgb(19, 25, 33);
+                    
+            }
+             .data{
+                 color: white;
+                font-size: 18px;
+                background-color: black;
+                width: auto;
+                
+            }
+           
+
+          /*Registration*/
+     
+     /*Student Login*/
+           
+            .Stu_Login #t_hadding{
+                width: 180px; 
+                color: white; 
+                margin:auto; 
+                font-size: 14px;
+                text-align: center;
+                background-color: rgb(15, 17, 17);
+            }
+           /*Student registration */
+          #t_hadding{
+                width: 200px; 
+                color: white; 
+                margin:auto; 
+                font-size: 14px;
+                text-align: center;
+                background-color: rgb(15, 17, 17);
+            }
+            
+     
+      /*Student Home*/
+        
+            /*SearchBook*/
+             
+               .SearchBook{
+                background-image: url("Images/search_book.jpg ");
+            }
+
+          
+            /*SearchBookConf*/
+             .seachconf{
+                
+                background-image: url("Images/search_book.jpg ");
+            }
+            
+          
+            
+           /*BookIssue*/
+           
+           .BookIssue_body{
+                
+                background-image: url("Images/issued_book.jpg ");
+            }
+         
+/*Issued Book*/
+
+            .Issued{
+                background-image: url("Images/issued_book.jpg ");
+            }
+             .Issued #data{
+                color: white; 
+                background-color: rgb(19, 25, 33);
+                    
+            }
+             .Issued #Id{
+                width:100px;
+                
+                    
+            }
+             
+/*Return Book*/
+ .ReturnBook #data{
+                color: white; 
+                background-color: rgb(10, 25, 33);
+               
+ }
+  .ReturnBook{
+                background-image: url("Images/return_book.jpg ");
+            }
+           
+             
+            
+            /*Fine*/
+            
+            .Fine{
+                
+                background-image: url("Images/fine.jpg ");
+            }
+            
+             
+            
+            
+
+
+
+/*For responsive*/
+.menu-toggle{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+  
+       @media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+         /*background-color: #1e1e1e;*/ 
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 160px;
+        text-align: right;
+        padding-top: 15px;
+        padding-right: 2px;
+        gap:.5px;
+    }
+   
+  
+nav ul a{
+    font-size: 13px;
+    color: black;
+    background-color:#003333;
+}
+nav ul a:hover{
+    color:#c63edf;
+    
+}
+    nav ul.show {
+        display: flex;
+        
+    }
+
+    .menu-toggle {
+      
+        display: block;
+    }
+    
+    body {
+        background-attachment: scroll;
+    }
+
+       } 
+
+            
