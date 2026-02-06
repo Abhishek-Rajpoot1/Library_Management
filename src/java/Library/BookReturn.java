@@ -14,29 +14,30 @@ public class BookReturn extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter())
-        {
-           String id=request.getParameter("id");
-           String name=request.getParameter("name");
-           String cls=request.getParameter("class");
-           String sem=request.getParameter("sem");
+        {  String sid=request.getParameter("sid");
+           String sname=request.getParameter("sname");
+           String bid=request.getParameter("bid");
+           String bname=request.getParameter("bname");
+           String bcls=request.getParameter("bcls");
+           String bsem=request.getParameter("bsem");
            DBConnect db= new DBConnect();
-           db.pstmt=db.con.prepareStatement("select*from book_issue where b_id=? and b_name=?");
-           db.pstmt.setString(1,id);
-           db.pstmt.setString(2,name);
+           db.pstmt=db.con.prepareStatement("select*from book_issue where b_id=? and s_id=?");
+           db.pstmt.setString(1,bid);
+           db.pstmt.setString(2,sid);
            db.rst=db.pstmt.executeQuery();
            if(db.rst.next()){
                
           db.pstmt=db.con.prepareStatement("insert into book_module values(?,?,?,?)");
-            db.pstmt.setString(1, id);
-            db.pstmt.setString(2, name);
-            db.pstmt.setString(3, cls);
-            db.pstmt.setString(4, sem);
+            db.pstmt.setString(1, bid);
+            db.pstmt.setString(2, bname);
+            db.pstmt.setString(3, bcls);
+            db.pstmt.setString(4, bsem);
             int i=db.pstmt.executeUpdate();
            if(i>0)
            {
-              db.pstmt=db.con.prepareStatement("delete from  book_issue where b_id=? and b_name=?");
-               db.pstmt.setString(1,id);
-           db.pstmt.setString(2,name);
+              db.pstmt=db.con.prepareStatement("delete from  book_issue where b_id=? and s_id=?");
+               db.pstmt.setString(1,bid);
+               db.pstmt.setString(2,sid);
            int i1 = db.pstmt.executeUpdate();
            if(i1>0)
            {

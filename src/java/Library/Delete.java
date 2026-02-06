@@ -33,7 +33,7 @@ public class Delete extends HttpServlet {
            int i=db.pstmt.executeUpdate();
            if(i>0)
            {
-               response.sendRedirect("Library/AdminHome.jsp?msg=Delete Book Successfully");
+               response.sendRedirect("Library/BookModule.jsp?msg=Delete Book Successfully");
            }
            else
            {

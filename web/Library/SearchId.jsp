@@ -11,28 +11,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="Style.css">
-        
+        <script defer src="Library.js"></script>
     </head>
     <body class="searchId">
-         <center>
-        <form action="UpdateBook.jsp">
-           <h1>Librarian Home page</h1>
-        <header class="main">
-          <a href="AdminHome.jsp"><h3>Back</h3></a>
-          <a href="Home.jsp"><h3>Home</h3></a>
-          <a href="SearchId.jsp"> <h3>Search Books</h3></a>
-          <a href="AddBook.jsp">   <h3>Add Books</h3></a>
-          <a href="Update.jsp"> <h3>Update Books</h3></a>
-          <a href="Delete.jsp"> <h3>Delete  Book</h3></a>
-            <a href="../LogeOut"> <h3 id="logout">Logout</h3></a>
-  </header>
+        <nav class="navbar">
+            <div class="logo">Librarian Home page</div>
         
+            <ul>
+           <li><a href="Home.jsp"> Home </a></li>
+           <li><a href="SearchId.jsp">  Search Books </a></li>
+           <li><a href="AddBook.jsp">    Add Books </a></li>
+           <li><a href="Update.jsp">  Update Books </a></li>
+           <li><a href="Delete.jsp">  Delete  Book </a></li>
+              <li><a href="../LogeOut"> Logout </a></li>
+          
+            </ul>
+             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+         <form action="UpdateBook.jsp">
             <h3 id="t_hadding">Search Book </h3>
-            <table border="2" cellspacing="0" cellpading="5">
+            <table border="2" cellspacing="0" cellpadding="5">
                 <tr><td class="data">Enter Book Id</td><td><input type="text" name="id"></td></tr>
                 <tr><td><input id="submit" type=submit value=Submit></td><td><input id="reset" type=reset value=Reset></td></tr>
             </table>
         </form>
-    </center>
+  
     </body>
 </html>

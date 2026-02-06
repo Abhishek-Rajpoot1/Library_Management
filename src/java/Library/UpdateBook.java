@@ -13,14 +13,14 @@ public class UpdateBook extends HttpServlet {
  public void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try
+        try(PrintWriter out = response.getWriter())
         {
             String id=request.getParameter("id");
-             String name=request.getParameter("name");
-              String cls=request.getParameter("class");
-               String sem=request.getParameter("sem");
+            String name=request.getParameter("name");
+            String cls=request.getParameter("class");
+            String sem=request.getParameter("sem");
             DBConnect db=new DBConnect();
-            db.pstmt=db.con.prepareStatement("update book_module SET b_name=?,b_class=?,b_sem=? where b_id=?");
+            db.pstmt=db.con.prepareStatement("update book_module set b_name=?,b_class=?,b_sem=? where b_id=?");
             db.pstmt.setString(1, name);
             db.pstmt.setString(2, cls);
             db.pstmt.setString(3, sem);
@@ -29,12 +29,12 @@ public class UpdateBook extends HttpServlet {
             if(i>0)
             {
             
-                 response.sendRedirect("Library/AdminHome.jsp?msg= Update Book Successfully");
+                 response.sendRedirect("Library/BookModule.jsp?msg= Update Book Successfully");
             }
             else
             {
-                out.println("Wrong Book Id");
-                out.println("<a href='Library/UpdateBook.jsp'>Go back to Update Page</a> ");
+              
+                out.println("Wrong Book Id <a href='Library/BookModule.jsp'> Try again..</a> ");
             }
         }
         catch(Exception e)

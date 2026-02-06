@@ -11,26 +11,27 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
          <link rel="stylesheet" href="Style.css">
+          <script defer src="Library.js"></script>
     </head>
     <body class="SearchBook">
-        <center>
-            
+      <nav class="navbar">
+            <div class="logo">Student Home</div>
+            <ul>
+                <li> <a href="Home.jsp"> Home </a></li>
+                <li><a href="SearchBook.jsp"> Search Book</a></li>
+                <li><a href="BookIssue.jsp">  Issue Books</a></li>
+                <li><a href="Issued.jsp">  Issued Books </a></li>
+                <li> <a href="ReturnBook.jsp">  Return Books </a></li>
+                   <li> <a href="Home.jsp"> Logout </a></li> 
+            </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
         <form action="SearchBookConf.jsp">
-        <h1>Student Home</h1>
-        
-        <header class="main">
-            <a href="Home.jsp"><h3>Home</h3> </a>
-             <a href="SearchBook.jsp"><h3>Search Book</h3></a>
-             <a href="BookIssue.jsp"><h3> Issue Books</h3></a>
-             <a href="Issued.jsp"><h3> Issued Books</h3></a>
-             <a href="ReturnBook.jsp"><h3> Return Books</h3></a>
-             <a href="../LogOut"> <h3 id="logout">Logout</h3></a>
-        </header>
-            <table border="2" cellspacing="0" cellpading="5">
+                <table  cellspacing="0" cellpadding="5" border="2">
                 <tr><td class="data">Enter Book Name</td><td><input type="text" name="name"></td></tr>
                 <tr><td><input id="submit" type=submit ></td><td><input id="reset" type=reset value=Reset></td></tr>
             </table>   
         </form>
-    </center>
+   
     </body>
 </html>

@@ -10,114 +10,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-       <style>
-            body{
-                height:750px;
-                width:100%;
-                /*border: 2px solid black;*/
-                margin:0px;
-                padding: 0px;
-                background-repeat: no-repeat;
-                background-size:100% 100%;
-                background-position-y: 145px;
-                background-image: url("Images/liabrarian.png ");
-            }
-            a{
-                 text-decoration: none;
-            }
-            .main {
-                 /*margin-top: -40px;*/
-               height:70px;
-               width:100%;
-                /*border:5px solid black;*/
-                background-color:rgb(19, 25, 33);
-                justify-content:space-evenly;
-                display: flex;
-               
-                
-            }
-        .main a h2:hover{
-                color:gray;
-                /*font-size:20px;*/
-                /*margin:1px;*/
-                padding: 2px;
-                border:1px white solid;
-            }
-            .main a h2{
-                color:rgb(255, 255, 255);
-            }
-            h1{ 
-                font-size: 40px;
-                height:60px;
-                margin: 0px;
-                padding-top: 15px;
-                /*margin-top: -5px;*/
-                color:rgb(255, 255, 255);
-                background-color: rgb(15, 17, 17) ;
-            }
-            .data{
-                
-                font-size: 30px;
-                font-weight:bold;
-                
-            }
-            table{
-                margin-top:10px;
-                margin-left: -20px;
-                
-            }
-           #submit{
-                color: white;
-                width:150px;
-                background-color: rgb(45, 65, 35);
-                font-size: 20px;
-                border-radius: 20px;
-                font-weight: bold;
-                margin-left: 30px;
-            }
-            #reset{
-                color: white;
-                width:120px;
-                background-color: rgb(79, 25, 33);
-                font-size: 20px;
-                border-radius: 20px;
-                font-weight: bold;
-                margin-left:100px;
-            }
-            #logout{
-                height: 40px;
-                width: 110px;
-                
-                border-radius: 30px;
-                background-color:darkred;
-                color: black;
-                padding-top:7px;
-                margin-top:12px;
-                
-            }
-            input{
-                width:300px
-            }
-            #cont{
-                background-color:palegoldenrod;
-            }
-      </style>
+        <link rel="stylesheet" href="Style.css">
+       <script defer src="Library.js"></script>
     </head>
-    <body>
-         <center>
-               <form action="../Delete">
-        
-           <h1>Librarian Home page</h1>
-        <header class="main">
-          <a href="AdminHome.jsp"><h2>Back</h2></a>
-          <a href="Home.jsp"><h2>Home</h2></a>
-          <a href="SearchId.jsp"> <h2>Search Books</h2></a>
-          <a href="AddBook.jsp">   <h2>Add Books</h2></a>
-          <a href="Update.jsp"> <h2>Update Books</h2></a>
-          <a href="Delete.jsp"> <h2>Delete  Book</h2></a>
-             <a href="../LogeOut"> <h2 id="logout">Logout</h2></a>
-  </header>
-            <table border="2" cellspacing="0" cellpading="5">
+    <body> 
+        <nav class="navbar">
+            <div class="logo">Librarian Home page</div>
+       
+            <ul>
+           <li><a href="Home.jsp"> Home </a></li>
+           <li><a href="SearchId.jsp">  Search Books </a></li>
+           <li><a href="AddBook.jsp">    Add Books </a></li>
+           <li><a href="Update.jsp">  Update Books </a></li>
+           <li><a href="Delete.jsp">  Delete  Book </a></li>
+              <li><a href="Home.jsp"> Logout </a></li>
+          
+            </ul>
+             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+         <form action="../Delete">
+            <table border="2" cellspacing="0" cellpadding="5">
                 
                 <% 
                   out.println("<div id=cont>");
@@ -129,15 +41,15 @@
             db.rst=db.pstmt.executeQuery();
             if(db.rst.next())
             {
-             out.println("<tr><td class=data >Enter Book Id</td><td><input type=text name=id value='"+db.rst.getString(1)+"'></td></tr>");   
-              out.println("<tr><td class=data>Enter Book Name</td><td>"+db.rst.getString(2)+"</td></tr>");  
-              out.println("<tr><td class=data>Enter Book Class</td><td>"+db.rst.getString(3)+"</td></tr>");  
-               out.println("<tr><td class=data>Enter Book Sem</td><td>"+db.rst.getString(4)+"</td></tr>"); 
+            out.println("<tr><td class=data> Book Id</td><td><input type=text name=id value='"+db.rst.getString(1)+"' readonly></td></tr>");   
+              out.println("<tr><td class=data> Book Name</td><td><input type=text name=name value='"+db.rst.getString(2)+"' readonly></td></tr>");  
+              out.println("<tr><td class=data>Book Class</td><td><input type=text name=class value='"+db.rst.getString(3)+"' readonly></td></tr>");  
+               out.println("<tr><td class=data>Book Sem</td><td><input type=text name=sem value='"+db.rst.getString(4)+"' readonly></td></tr>"); 
                  
                 out.println("<tr><td><input id=submit type=submit value=Delete></td><td><input id=reset type=reset value=Reset></td></tr>");
         }
             else{
-                out.println("Book not avilable in Library");
+                out.println("Wrong Book Id <a href=Delete.jsp>Try again..</a>");
             }
               
 out.println("</div>");
@@ -145,6 +57,6 @@ out.println("</div>");
  </table>
                 
         </form>
-    </center>
+    
     </body>
 </html>
