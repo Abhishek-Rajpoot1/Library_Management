@@ -1,122 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Library Management System | Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f6f8;
-            color: #333;
-        }
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
-        h2 {
-            color: #2c3e50;
-        }
-        .buttons a {
-            text-decoration: none;
-        }
-        .buttons button {
-            padding: 12px 20px;
-            margin: 10px 10px 10px 0;
-            border: none;
-            background: #3498db;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .buttons button:hover {
-            background: #2980b9;
-        }
-        .note {
-            background: #fff3cd;
-            border-left: 5px solid #ffc107;
-            padding: 15px;
-            margin-top: 20px;
-        }
-        .screenshots img {
-            width: 300px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #2c3e50;
-            color: white;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Library Management System</h1>
-    <p>Java | JSP | Servlets | MySQL</p>
-</header>
-
-<section>
-    <h2>📌 Project Overview</h2>
-    <p>
-        This is a <b>Library Management System</b> developed using
-        <b>Java, JSP, Servlets, and MySQL</b>.
-        The system allows admin and students to manage books,
-        issue/return records, and user data efficiently.
-    </p>
-
-    <h2>🎯 Live Demo (UI Preview)</h2>
-    <div class="buttons">
-        <a href="home.html">
-            <button>Home (Demo)</button>
-        </a>
-        <a href="StudentHome.html">
-            <button>StudentHome Page (Demo)</button>
-        </a>
-        
-    </div>
-
-    <div class="note">
-        ⚠ <b>Important Note:</b><br>
-        This live demo shows only the frontend UI.<br>
-        Backend functionality (Login, Database operations)
-        works on <b>Apache Tomcat</b> using JSP and MySQL.
-    </div>
-
-    <h2>🖼 Project Screenshots</h2>
-    <div class="screenshots">
-        <!-- Add your screenshots in screenshots/ folder -->
-        <img src="screenshots/login.png" alt="Login Page">
-        <img src="screenshots/admin-dashboard.png" alt="Admin Dashboard">
-        <img src="screenshots/book-list.png" alt="Book List">
-    </div>
-
-    <h2>📂 Source Code</h2>
-    <p>
-        View complete source code on GitHub:
-        <br>
-        <a href="https://github.com/Abhishek-Rajpoot1/Library_Management" target="_blank">
-            https://github.com/Abhishek-Rajpoot1/Library_Management
-        </a>
-    </p>
-</section>
-
-<footer>
-    © 2026 Abhishek Rajpoot | Library Management System
-</footer>
-
-</body>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="Style.css">
+         <script defer src="Library.js"></script>
+    </head>
+    <body>
+   
+        <nav class="navbar">
+            <div class="logo">Library</div>
+            <ul>
+                <li> <a href="Lib_Reg.html">Admin Registration</a></li>
+                <li><a href="adminlogin.html">Admin Login</a></li>
+                 <li><a href="BookList.html"> Book List</a></li>
+                  <li> <a href="StudentRegisration.html"> Student Registration</a></li>
+                   <li><a href="Stu_Login.html">Student Login</a></li>
+                    
+            </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+   
+    </body>
 </html>
