@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="web/Library/Style.css">
+         <script defer src="Library.js"></script> 
+    </head>
+    <body class="delete">
+       <nav class="navbar">
+            <div class="logo">Librarian Home page</div>
+       
+            <ul>
+           <li><a href="Home.html"> Home </a></li>
+           <li><a href="SearchId.html">  Search Books </a></li>
+           <li><a href="AddBook.html">    Add Books </a></li>
+           <li><a href="Update.html">  Update Books </a></li>
+           <li><a href="Delete.html">  Delete  Book </a></li>
+              <li><a href="Home.html"> Logout </a></li>
+          
+            </ul>
+             <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+        <form action="DeleteSearch.html">
+        <h3 id="t_hadding">Delete Book</h3>
+            <table border="2" cellspacing="0" cellpadding="5">
+                <tr><td class="data">Enter Book Id</td><td><input type="text" name="id"></td></tr>
+                <tr><td><input id="submit" type="submit" value="Submit"></td><td><input id="reset" type="reset" value="Value"></td></tr>
+            </table>
+        </form>
+    
+    </body>
+</html>
